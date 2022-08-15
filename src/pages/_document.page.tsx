@@ -33,7 +33,10 @@ export default class MyDocument extends NextDocument {
   render() {
     return (
       <Html lang="pt-BR">
-        <Head />
+        <Head>
+          {/* pegar uma foto aleatoria de um link e colocar no favicon */}
+          <link rel="icon" href="https://vercel.com/api/www/avatar/fe684775105e79e408aed9cb5aa498d8133f0b3d?s=60" />
+        </Head>
         <body>
           <Main />
           <NextScript />
