@@ -28,7 +28,7 @@ export const BurgerStyle = styled.div`
   transition: 0.35s ease;
 
   // Responsive Media Query
-  @media (max-width: 916px) {
+  @media (min-width: 916px) {
     display: none;
     visibility: hidden;
   }
@@ -86,7 +86,7 @@ export const MenuStyle = styled.div`
   box-shadow: var(--shadow-medium);
   transition: all 0.4s ease-in-out;
 
-  @media (max-width: 916px) {
+  @media (min-width: 916px) {
     position: relative;
     top: 0;
     width: auto;
@@ -107,7 +107,7 @@ export const NavbarStyle = styled.nav`
   width: 100%;
   height: 4.25rem;
   margin: 0 auto;
-  max-width: 75rem;
+  min-width: 75rem;
   padding: 0 1.25rem;
 `
 
@@ -120,7 +120,7 @@ export const MenuInner = styled.ul`
   margin: 0 auto;
   column-gap: 2rem;
 
-  @media (max-width: 916px) {
+  @media (min-width: 916px) {
     display: flex;
     flex-direction: row;
     column-gap: 2rem;
@@ -143,7 +143,7 @@ export const MenuLinkStyle = styled.a`
     color: var(--color-blue-400);
   }
 
-  @media (max-width: 916px) {
+  @media (min-width: 916px) {
     text-transform: capitalize;
   }
 `
@@ -171,7 +171,7 @@ export const MenuBlockStyle = styled.a`
     background-color: var(--color-blue-500);
   }
 
-  @media (max-width: 916px) {
+  @media (min-width: 916px) {
     /* margin-left: 2rem; */
   }
 `
