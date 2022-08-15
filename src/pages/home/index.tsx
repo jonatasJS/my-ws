@@ -7,7 +7,7 @@ export const Home: NextPage = () => {
   return (
     <>
       <SEO
-        title="STRV Next.js app"
+        title="Next Rocket"
         description="change me before going to production"
       />
 
