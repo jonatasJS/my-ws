@@ -6,6 +6,7 @@
   "orientation": "portrait",
 	"start_url" : "/",
 	"name" : "Next Rocket",
+	"short_name" : "NR",
   "icons": [
     {
       "src": "/icon.png",
