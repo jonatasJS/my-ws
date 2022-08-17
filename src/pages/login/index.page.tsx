@@ -21,7 +21,7 @@ export default function Login() {
 	return (
 		<LoginStyle>
 			<LoginForm>
-				<form>
+				<form onSubmit={e => e.preventDefault()}>
 					<LoginTitle>
 						{random < 5 ? (
 							<LockIcon width={75} height={75} />
@@ -60,7 +60,7 @@ export default function Login() {
 						required
 						pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
 					/>
-					<LoginInput type="password" placeholder="Password" required />
+					<LoginInput minLength={8} type="password" placeholder="Password" required />
 					<LoginButton>login</LoginButton>
 				</form>
 				<OtherLogin>

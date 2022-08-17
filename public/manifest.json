@@ -6,6 +6,7 @@
   "orientation": "portrait",
 	"start_url" : "/",
 	"name" : "Next Rocket",
+	"service_worker" : "sw.js",
 	"short_name" : "NR",
   "icons": [
     {
