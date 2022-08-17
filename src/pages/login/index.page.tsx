@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-dom-props */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
@@ -26,6 +27,7 @@ export default function Login() {
 							<LockIcon width={75} height={75} />
 						) : (
 							<svg
+								id="logo"
 								viewBox="-0.261 0.894 259.337 257.393"
 								width="259.337"
 								height="257.393"
