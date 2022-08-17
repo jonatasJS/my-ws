@@ -34,6 +34,7 @@ export default class MyDocument extends NextDocument {
 		return (
 			<Html lang="pt-BR">
 				<Head>
+					<link rel="manifest" href="manifest.json" />
 					<link rel="icon" href="/favicon.svg" />
 				</Head>
 				<body>

@@ -1,6 +1,7 @@
-import Link from 'next/link'
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-import { Logo } from '~/components/Logo'
+import { Logo } from '~/components/Logo';
 
 import {
   BrandStyle,
@@ -8,13 +9,16 @@ import {
   HeaderStyle,
   MenuBlockStyle,
   MenuInner,
+	MenuItem,
   MenuLinkStyle,
   MenuStyle,
   NavbarStyle,
 } from './style'
 
 export function Header() {
-  return (
+	const { pathname } = useRouter();
+
+	return (
     <HeaderStyle>
       <NavbarStyle>
         <Link href="/">
@@ -29,26 +33,38 @@ export function Header() {
         </BurgerStyle>
         <MenuStyle>
           <MenuInner>
-            <li className="menu-item">
+            <MenuItem>
               <Link href="/">
-                <MenuLinkStyle>Inicio</MenuLinkStyle>
+                <MenuLinkStyle
+									className={pathname === '/' ? 'active' : ''}
+								>Inicio</MenuLinkStyle>
               </Link>
-            </li>
-            <li className="menu-item">
+							{pathname === '/' ? <span /> : ''}
+            </MenuItem>
+            <MenuItem>
               <Link href="/products">
-                <MenuLinkStyle>Produtos</MenuLinkStyle>
+                <MenuLinkStyle
+									className={pathname === '/products' ? 'active' : ''}
+								>Produtos</MenuLinkStyle>
               </Link>
-            </li>
-            <li className="menu-item">
+							{pathname === '/products' ? <span /> : ''}
+            </MenuItem>
+            <MenuItem>
               <Link href="/reviews">
-                <MenuLinkStyle>Reviews</MenuLinkStyle>
+                <MenuLinkStyle
+									className={pathname === '/reviews' ? 'active' : ''}
+								>Reviews</MenuLinkStyle>
               </Link>
-            </li>
-            <li className="menu-item">
+							{pathname === '/reviews' ? <span /> : ''}
+            </MenuItem>
+            <MenuItem>
               <Link href="/support">
-                <MenuLinkStyle>Ajuda</MenuLinkStyle>
+                <MenuLinkStyle
+									className={pathname === '/support' ? 'active' : ''}
+								>Ajuda</MenuLinkStyle>
               </Link>
-            </li>
+							{pathname === '/support' ? <span /> : ''}
+            </MenuItem>
           </MenuInner>
         </MenuStyle>
         <Link href='/login'>

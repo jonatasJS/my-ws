@@ -9,7 +9,7 @@ export const HeaderStyle = styled.header`
   height: auto;
   margin: 0 auto;
   transition: all 0.35s ease;
-`
+`;
 
 export const BurgerStyle = styled.div`
   position: relative;
@@ -72,7 +72,7 @@ export const BurgerStyle = styled.div`
       transform: rotate(-135deg);
     }
   }
-`
+`;
 
 export const MenuStyle = styled.div`
   position: fixed;
@@ -96,7 +96,7 @@ export const MenuStyle = styled.div`
     background: none;
     box-shadow: none;
   }
-`
+`;
 
 export const NavbarStyle = styled.nav`
   display: flex;
@@ -109,7 +109,7 @@ export const NavbarStyle = styled.nav`
   margin: 0 auto;
   max-width: 75rem;
   padding: 0 1.25rem;
-`
+`;
 
 export const MenuInner = styled.ul`
   display: flex;
@@ -126,7 +126,23 @@ export const MenuInner = styled.ul`
     column-gap: 2rem;
     margin: 0 auto;
   }
-`
+`;
+
+export const MenuItem = styled.li`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	span {
+		border-bottom: -10px;
+		border-radius: 50%;
+		width: .25rem;
+		height: .25rem;
+		background-color: var(--color-blue-400);
+		transition: all 0.25s ease-in-out;
+	}
+`;
 
 export const MenuLinkStyle = styled.a`
   font-family: inherit;
@@ -140,13 +156,17 @@ export const MenuLinkStyle = styled.a`
   cursor: pointer;
 
   &:hover {
-    color: var(--color-blue-400);
+    color: var(--color-blue-500);
   }
+
+	&.active {
+		color: var(--color-blue-400);
+	}
 
   @media (min-width: 900px) {
     text-transform: capitalize;
   }
-`
+`;
 
 export const MenuBlockStyle = styled.a`
   display: inline-block;
@@ -174,7 +194,7 @@ export const MenuBlockStyle = styled.a`
   @media (min-width: 900px) {
     /* margin-left: 2rem; */
   }
-`
+`;
 
 export const BrandStyle = styled.a`
   font-family: inherit;
@@ -199,4 +219,4 @@ export const BrandStyle = styled.a`
     fill: var(--color-blue-300);
     stroke: var(--color-blue-400);
   }
-`
+`;
