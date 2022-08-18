@@ -4,7 +4,6 @@ import { BiSearchAlt2 as SearchIcon } from 'react-icons/bi'
 import { SEO } from '~/components/SEO'
 
 import {
-	ItemDescription,
 	ItemPrice,
 	ItemTitle,
 	ItemImage,
@@ -67,13 +66,6 @@ export default function Products() {
 						}
 						return null;
 					})}
-					<ProductContainer>
-						<ItemImage src="icon-512x512.png" alt="{item.title}" />
-						<ItemTitle>item.title</ItemTitle>
-						<ItemDescription>item.description</ItemDescription>
-						<ItemPrice>item.price</ItemPrice>
-						<ItemButton>item.details</ItemButton>
-					</ProductContainer>
 				</ListContainer>
 			</ProductsPageStyle>
 		</>
