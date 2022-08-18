@@ -34,9 +34,9 @@ export default class MyDocument extends NextDocument {
 		return (
 			<Html lang="pt-BR">
 				<Head>
-					{/* <script src="/sw.js" /> */}
 					<link rel="manifest" href="manifest.json" />
 					<link rel="icon" href="/favicon.svg" />
+					<meta name="theme-color" content="#080a0c" />
 				</Head>
 				<body>
 					<Main />

@@ -2,17 +2,18 @@ import styled from 'styled-components'
 
 export const ProductsPageStyle = styled.div`
 	width: 100%;
-	height: calc(100%-158.8px);
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
+	height: 90%;
+	margin-bottom: 500px;
+	/* gap: 100px; */
 `
 
 export const SearchContainer = styled.form`
 	width: 490px;
+	margin-top: 150px;
 	display: block;
-	margin: 0 auto;
 `
 
 export const SearchInput = styled.input`
@@ -60,5 +61,61 @@ export const SearchButton = styled.a`
 `
 
 export const ListContainer = styled.div`
-	width: 100%;
+	width: 90%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-gap: 20px;
+	justify-content: center;
+	align-items: center;
+	margin-top: 100px;
 `
+
+export const ProductContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+`
+
+export const ItemTitle = styled.h3`
+	font-size: 0.5rem;
+`
+
+export const ItemDescription = styled.p`
+	font-size: 0.5rem;
+	margin-top: 10px;
+	margin-bottom: 10px;
+`
+
+export const ItemPrice = styled.h3`
+	font-size: 1.2rem;
+	color: var(--color-blue-400);
+`
+
+export const ItemImage = styled.img`
+	width: 50%;
+	height: auto;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+`
+
+export const ItemButton = styled.a`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 70%;
+	height: 100%;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+	background-color: var(--color-blue-400);
+	color: white;
+	font-size: 1rem;
+	text-decoration: none;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	&:hover {
+		background-color: var(--color-blue-500);
+	}
+`;

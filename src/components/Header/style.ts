@@ -9,6 +9,9 @@ export const HeaderStyle = styled.header`
   height: auto;
   margin: 0 auto;
   transition: all 0.35s ease;
+	backdrop-filter: blur(5px);
+	background-color: rgba(8, 10, 12, .7);
+	box-shadow: 0 10px 10px 1px rgba(0, 0, 0, .5), inset 0 -5px 20px 1px rgba(0, 0, 0, .5);
 `;
 
 export const BurgerStyle = styled.div`
