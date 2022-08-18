@@ -54,7 +54,7 @@ export default function Products() {
 					</SearchButton>
 				</SearchContainer>
 				<ListContainer>
-					{data?.map((item, i, a) => {
+					{data.map((item) => {
 						if (item.title.toLowerCase().includes(search.toLowerCase())) {
 							return (
 								<ProductContainer key={item.id}>
@@ -65,6 +65,7 @@ export default function Products() {
 								</ProductContainer>
 							)
 						}
+						return null;
 					})}
 					<ProductContainer>
 						<ItemImage src="icon-512x512.png" alt="{item.title}" />
