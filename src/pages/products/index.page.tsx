@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
-import { BiSearchAlt2 as SearchIcon } from 'react-icons/bi'
+import { useEffect, useState } from 'react';
+import { BiSearchAlt2 as SearchIcon } from 'react-icons/bi';
 
-import { SEO } from '~/components/SEO'
+import { SEO } from '~/components/SEO';
 
 import {
 	ItemPrice,
@@ -14,27 +14,27 @@ import {
 	SearchContainer,
 	SearchInput,
 	ItemButton,
-} from './ProductsPageStyle'
+} from './ProductsPageStyle';
 
 interface DataTypes {
-	id: number
-	title: string
-	price: number
-	category: string
-	description: string
-	image: string
+	id: number;
+	title: string;
+	price: number;
+	category: string;
+	description: string;
+	image: string;
 }
 
 export default function Products() {
-	const [data, setData] = useState<Array<DataTypes>>([])
-	const [search, setSearch] = useState('')
+	const [data, setData] = useState<Array<DataTypes>>([]);
+	const [search, setSearch] = useState('');
 
 	useEffect(() => {
 		fetch('https://fakestoreapi.com/products')
 			.then((res) => res.json())
 			.then((respo) => setData(respo))
 			.catch((err) => console.log(err))
-	}, [])
+	}, []);
 
 	return (
 		<>
@@ -69,7 +69,7 @@ export default function Products() {
 				</ListContainer>
 			</ProductsPageStyle>
 		</>
-	)
+	);
 }
 /*
 
