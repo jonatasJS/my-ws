@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const HeaderStyle = styled.header`
 	position: fixed;
+	font: 14px/1.5em 'Fira Code';
 	top: 0;
 	left: 0;
 	z-index: 100;
@@ -17,6 +18,7 @@ export const HeaderStyle = styled.header`
 
 export const BurgerStyle = styled.div`
 	position: relative;
+	font: 14px/1.5em 'Fira Code';
 	display: block;
 	cursor: pointer;
 	user-select: none;
@@ -32,13 +34,14 @@ export const BurgerStyle = styled.div`
 	transition: 0.35s ease;
 
 	// Responsive Media Query
-	@media (min-width: 900px) {
+	@media (min-width: 958px) {
 		display: none;
 		visibility: hidden;
 	}
 
 	span {
 		position: absolute;
+		font: 14px/1.5em 'Fira Code';
 		display: block;
 		right: 0;
 		width: 100%;
@@ -80,6 +83,7 @@ export const BurgerStyle = styled.div`
 
 export const MenuStyle = styled.div`
 	position: fixed;
+	font: 14px/1.5em 'Fira Code';
 	top: -600%;
 	left: 0;
 	width: 100%;
@@ -100,10 +104,12 @@ export const MenuStyle = styled.div`
 		width: 200%;
 		margin-left: calc(-100% / 2);
 		height: 1px;
+		font: 14px/1.5em 'Fira Code';
 	}
 
-	@media (min-width: 900px) {
+	@media (min-width: 958px) {
 		position: relative;
+		font: 14px/1.5em 'Fira Code';
 		top: 0;
 		width: auto;
 		height: auto;
@@ -134,6 +140,7 @@ export const MenuStyle = styled.div`
 
 export const NavbarStyle = styled.nav`
 	display: flex;
+	font: 14px/1.5em 'Fira Code';
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
@@ -147,6 +154,7 @@ export const NavbarStyle = styled.nav`
 
 export const MenuInner = styled.ul`
 	display: flex;
+	font: 14px/1.5em 'Fira Code';
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
@@ -154,7 +162,7 @@ export const MenuInner = styled.ul`
 	margin: 0 auto;
 	column-gap: 2rem;
 
-	@media (min-width: 900px) {
+	@media (min-width: 958px) {
 		display: flex;
 		flex-direction: row;
 		column-gap: 2rem;
@@ -164,12 +172,14 @@ export const MenuInner = styled.ul`
 
 export const MenuItem = styled.li`
 	display: flex;
+	font: 14px/1.5em 'Fira Code';
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 
 	span {
 		border-bottom: -10px;
+		font: 14px/1.5em 'Fira Code';
 		border-radius: 50%;
 		width: 0.25rem;
 		height: 0.25rem;
@@ -180,6 +190,7 @@ export const MenuItem = styled.li`
 
 export const MenuLinkStyle = styled.a`
 	font-family: inherit;
+	font: 14px/1.5em 'Fira Code';
 	font-size: 1rem;
 	font-weight: 500;
 	user-select: none;
@@ -197,13 +208,14 @@ export const MenuLinkStyle = styled.a`
 		color: var(--color-blue-400);
 	}
 
-	@media (min-width: 900px) {
+	@media (min-width: 958px) {
 		text-transform: capitalize;
 	}
 `
 
 export const MenuBlockStyle = styled.a`
 	display: inline-block;
+	font: 14px/1.5em 'Fira Code';
 	font-family: inherit;
 	font-size: 0.875rem;
 	font-weight: 500;
@@ -232,6 +244,7 @@ export const MenuBlockStyle = styled.a`
 
 export const MenuBlockStyle2 = styled.a`
 	display: none;
+	font: 14px/1.5em 'Fira Code';
 	font-family: inherit;
 	align-items: center;
 	justify-content: center;
@@ -263,6 +276,7 @@ export const MenuBlockStyle2 = styled.a`
 
 export const BrandStyle = styled.a`
 	font-family: inherit;
+	font: 14px/1.5em 'Fira Code';
 	font-size: 1.625rem;
 	font-weight: 600;
 	line-height: 1.5;

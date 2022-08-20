@@ -79,18 +79,18 @@ export const ProductContainer = styled.div`
 `
 
 export const ItemTitle = styled.h3`
-	font-size: 0.9rem;
+	font-size: 0.6rem;
 	text-align: center;
 `
 
 export const ItemDescription = styled.p`
-	font-size: 0.7rem;
+	font-size: 0.6rem;
 	margin-top: 10px;
 	margin-bottom: 10px;
 `
 
 export const ItemPrice = styled.h3`
-	font-size: 1.5rem;
+	font-size: 1.0rem;
 	color: var(--color-blue-400);
 `
 
@@ -106,7 +106,7 @@ export const ItemButton = styled.a`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 70%;
+	width: 60%;
 	height: 100%;
 	border-radius: 10px;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);

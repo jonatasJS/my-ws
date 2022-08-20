@@ -60,7 +60,9 @@ export default function Products() {
 									<ItemImage src={item.image} alt={item.title} />
 									<ItemTitle>{item.title}</ItemTitle>
 									<ItemPrice>R$ {item.price}</ItemPrice>
-									<ItemButton>DETALHES</ItemButton>
+									<ItemButton
+										
+									>DETALHES</ItemButton>
 								</ProductContainer>
 							)
 						}

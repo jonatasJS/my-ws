@@ -52,9 +52,8 @@ export const GlobalStyles = createGlobalStyle`
   #__next {
     width: 100vw;
     height: 100vh;
-    font: 14px/1.5em "Fira Code";
-    /* font-family: 'Ubuntu', sans-serif;
-    font-size: 1.6rem; */
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.6rem;
     line-height: 1.6;
     scroll-behavior: smooth;
     color: var(--color-white-100);
