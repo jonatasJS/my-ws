@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { BiSearchAlt2 as SearchIcon } from 'react-icons/bi'
 
@@ -60,9 +61,11 @@ export default function Products() {
 									<ItemImage src={item.image} alt={item.title} />
 									<ItemTitle>{item.title}</ItemTitle>
 									<ItemPrice>R$ {item.price}</ItemPrice>
-									<ItemButton
-										
-									>DETALHES</ItemButton>
+									<Link
+										href={`/products/${item.id}`}
+									>
+										<ItemButton>DETALHES</ItemButton>
+									</Link>
 								</ProductContainer>
 							)
 						}

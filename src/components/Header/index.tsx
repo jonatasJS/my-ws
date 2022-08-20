@@ -1,3 +1,4 @@
+/* eslint-disable require-unicode-regexp */
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
@@ -50,12 +51,12 @@ export function Header() {
 						<MenuItem onClick={() => setIsOpen(false)}>
 							<Link href="/products">
 								<MenuLinkStyle
-									className={pathname === '/products' ? 'active' : ''}
+									className={pathname.replaceAll(/[0-9]/g, '').replaceAll('/', '') === 'products' ? 'active' : ''}
 								>
 									Produtos
 								</MenuLinkStyle>
 							</Link>
-							{pathname === '/products' ? <span /> : ''}
+							{pathname.replaceAll(/[0-9]/g, '').replaceAll('/', '') === 'products' ? <span /> : ''}
 						</MenuItem>
 						<MenuItem onClick={() => setIsOpen(false)}>
 							<Link href="/reviews">

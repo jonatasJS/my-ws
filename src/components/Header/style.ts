@@ -64,19 +64,22 @@ export const BurgerStyle = styled.div`
 		}
 	}
 
-	&.is-active span {
-		&:nth-child(1) {
-			top: 0.5rem;
-			transform: rotate(135deg);
-		}
-		&:nth-child(2) {
-			right: -1.5rem;
-			opacity: 0;
-			visibility: hidden;
-		}
-		&:nth-child(3) {
-			top: 0.5rem;
-			transform: rotate(-135deg);
+	&.is-active {
+		transform: rotate(calc(-360deg / 2));
+
+		span {
+			&:nth-child(1) {
+				top: 0.5rem;
+				transform: rotate(135deg);
+			}
+			&:nth-child(2) {
+				opacity: 0;
+				visibility: hidden;
+			}
+			&:nth-child(3) {
+				top: 0.5rem;
+				transform: rotate(-135deg);
+			}
 		}
 	}
 `
