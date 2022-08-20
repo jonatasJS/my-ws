@@ -1,4 +1,4 @@
-import React, {  } from 'react'
+import React from 'react'
 import type { AppProps } from 'next/app'
 import NextApp from 'next/app'
 

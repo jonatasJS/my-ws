@@ -80,15 +80,27 @@ export const BurgerStyle = styled.div`
 
 export const MenuStyle = styled.div`
 	position: fixed;
-	top: -400%;
+	top: -600%;
 	left: 0;
 	width: 100%;
 	height: auto;
 	padding: 4rem 0 3rem;
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	gap: 30px;
 	overflow: hidden;
 	background-color: var(--color-black-300);
 	box-shadow: var(--shadow-medium);
 	transition: all 0.4s ease-in-out;
+
+	hr {
+		margin: -10px 0;
+		border: solid 1px rgba(255, 255, 255, 0.2);
+		width: 200%;
+		margin-left: calc(-100% / 2);
+		height: 1px;
+	}
 
 	@media (min-width: 900px) {
 		position: relative;
@@ -99,6 +111,12 @@ export const MenuStyle = styled.div`
 		margin-left: auto;
 		background: none;
 		box-shadow: none;
+		/* justify-content: center;
+		align-items: center; */
+
+		hr {
+			display: none;
+		}
 	}
 
 	&.is-active {
@@ -201,8 +219,39 @@ export const MenuBlockStyle = styled.a`
 		background-color: var(--color-blue-500);
 	}
 
-	@media (min-width: 900px) {
-		/* margin-left: 2rem; */
+	@media (max-width: 312px) {
+		display: none;
+	}
+`
+
+export const MenuBlockStyle2 = styled.a`
+	display: none;
+	font-family: inherit;
+	align-items: center;
+	justify-content: center;
+	font-size: 0.875rem;
+	font-weight: 500;
+	line-height: 1.25;
+	user-select: none;
+	white-space: nowrap;
+	text-align: center;
+	margin-left: 0;
+	margin-bottom: -10px;
+	padding: 0.65rem 1.5rem;
+	border-radius: 3rem;
+	text-transform: capitalize;
+	color: var(--color-white);
+	background-color: var(--color-blue-600);
+	box-shadow: var(--shadow-medium);
+	transition: all 0.3s ease-in-out;
+	cursor: pointer;
+
+	&:hover {
+		background-color: var(--color-blue-500);
+	}
+
+	@media (max-width: 312px) {
+		display: inline-block;
 	}
 `
 
@@ -228,5 +277,10 @@ export const BrandStyle = styled.a`
 	&:hover svg {
 		fill: var(--color-blue-300);
 		stroke: var(--color-blue-400);
+	}
+
+	@media (min-width: 312px) {
+		margin: 0;
+		padding: 0;
 	}
 `

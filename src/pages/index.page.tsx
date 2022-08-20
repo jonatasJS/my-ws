@@ -2,6 +2,8 @@ import React from 'react'
 
 import { SEO } from '~/components/SEO'
 
+import { Container } from "~/styles/StyleLayout";
+
 export default function Home() {
 	return (
 		<>
@@ -10,9 +12,9 @@ export default function Home() {
 				description="change me before going to production"
 			/>
 
-			<div>
+			<Container>
 				<p>Em construção!</p>
-			</div>
+			</Container>
 		</>
 	)
 }

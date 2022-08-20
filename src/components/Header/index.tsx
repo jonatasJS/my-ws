@@ -9,6 +9,7 @@ import {
 	BurgerStyle,
 	HeaderStyle,
 	MenuBlockStyle,
+	MenuBlockStyle2,
 	MenuInner,
 	MenuItem,
 	MenuLinkStyle,
@@ -77,6 +78,12 @@ export function Header() {
 							{pathname === '/support' ? <span /> : ''}
 						</MenuItem>
 					</MenuInner>
+
+					<hr />
+
+					<Link href="/login">
+						<MenuBlockStyle2>Login</MenuBlockStyle2>
+					</Link>
 				</MenuStyle>
 				<Link href="/login">
 					<MenuBlockStyle>Login</MenuBlockStyle>

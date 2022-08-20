@@ -1,8 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
-  @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;600;700&display=swap");
-
   :root {
     --color-white-100: hsl(206, 5%, 98%);
     --color-white-200: hsl(206, 5%, 90%);
