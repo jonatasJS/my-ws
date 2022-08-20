@@ -119,6 +119,12 @@ export const MenuStyle = styled.div`
 		}
 	}
 
+	@media (min-width: 312px) {
+		hr {
+			display: none;
+		}
+	}
+
 	&.is-active {
 		top: 0;
 		width: 100%;
