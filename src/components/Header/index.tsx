@@ -42,7 +42,10 @@ export function Header() {
 					<MenuInner>
 						<MenuItem onClick={() => setIsOpen(false)}>
 							<Link href="/">
-								<MenuLinkStyle className={pathname === '/' ? 'active' : ''}>
+								<MenuLinkStyle
+									href="/"
+									className={pathname === '/' ? 'active' : ''}
+								>
 									Inicio
 								</MenuLinkStyle>
 							</Link>
@@ -51,16 +54,28 @@ export function Header() {
 						<MenuItem onClick={() => setIsOpen(false)}>
 							<Link href="/products">
 								<MenuLinkStyle
-									className={pathname.replaceAll(/[0-9]/g, '').replaceAll('/', '') === 'products' ? 'active' : ''}
+									href="/products"
+									className={
+										pathname.replaceAll(/[0-9]/g, '').replaceAll('/', '') ===
+										'products'
+											? 'active'
+											: ''
+									}
 								>
 									Produtos
 								</MenuLinkStyle>
 							</Link>
-							{pathname.replaceAll(/[0-9]/g, '').replaceAll('/', '') === 'products' ? <span /> : ''}
+							{pathname.replaceAll(/[0-9]/g, '').replaceAll('/', '') ===
+							'products' ? (
+								<span />
+							) : (
+								''
+							)}
 						</MenuItem>
 						<MenuItem onClick={() => setIsOpen(false)}>
 							<Link href="/reviews">
 								<MenuLinkStyle
+									href="/reviews"
 									className={pathname === '/reviews' ? 'active' : ''}
 								>
 									Reviews
@@ -71,6 +86,7 @@ export function Header() {
 						<MenuItem onClick={() => setIsOpen(false)}>
 							<Link href="/support">
 								<MenuLinkStyle
+									href="/support"
 									className={pathname === '/support' ? 'active' : ''}
 								>
 									Ajuda
@@ -83,11 +99,11 @@ export function Header() {
 					<hr />
 
 					<Link href="/login">
-						<MenuBlockStyle2>Login</MenuBlockStyle2>
+						<MenuBlockStyle2 href="/login">Login</MenuBlockStyle2>
 					</Link>
 				</MenuStyle>
 				<Link href="/login">
-					<MenuBlockStyle>Login</MenuBlockStyle>
+					<MenuBlockStyle href="/login">Login</MenuBlockStyle>
 				</Link>
 			</NavbarStyle>
 		</HeaderStyle>
