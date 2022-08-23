@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow:
+Disallow: login
+Sitemap: https://jonatas.app/sitemap.xml
