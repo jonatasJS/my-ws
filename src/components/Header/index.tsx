@@ -26,7 +26,7 @@ export function Header() {
 		<HeaderStyle>
 			<NavbarStyle>
 				<Link href="/">
-					<BrandStyle>
+					<BrandStyle href="/">
 						<Logo />
 					</BrandStyle>
 				</Link>
