@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { BiSearchAlt2 as SearchIcon } from 'react-icons/bi'
 
-import { SEO } from '~/components/SEO';
+import { SEO } from '~/components/SEO'
 
 import { DataTypes } from '~/utils/Types'
 
@@ -24,7 +24,7 @@ export default function Products({ data }: { data: Array<DataTypes> }) {
 
 	return (
 		<>
-			<SEO title="Products" description="Products" />
+			<SEO title="Next Rocket - Products" description="Products" />
 
 			<ProductsPageStyle>
 				<SearchContainer className="search-container">
@@ -46,10 +46,10 @@ export default function Products({ data }: { data: Array<DataTypes> }) {
 									<ItemImage src={item.image} alt={item.title} />
 									<ItemTitle>{item.title}</ItemTitle>
 									<ItemPrice>R$ {item.price}</ItemPrice>
-									<Link
-										href={`/products/${item.id}`}
-									>
-										<ItemButton>DETALHES</ItemButton>
+									<Link href={`/products/${item.id}`}>
+										<ItemButton href={`/products/${item.id}`}>
+											DETALHES
+										</ItemButton>
 									</Link>
 								</ProductContainer>
 							)
@@ -61,8 +61,6 @@ export default function Products({ data }: { data: Array<DataTypes> }) {
 		</>
 	)
 }
-
-
 
 export async function getStaticProps() {
 	const res = await fetch(`https://fakestoreapi.com/products`)
@@ -92,4 +90,3 @@ export async function getStaticProps() {
 // 		fallback: false,
 // 	}
 // }
-
