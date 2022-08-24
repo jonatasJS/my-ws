@@ -21,10 +21,7 @@ export default function Login() {
 
 	return (
 		<>
-			<SEO
-				title='Next Rocket - Login'
-				description='Faça seu login'
-			/>
+			<SEO title="Next Rocket - LogIn" description="Faça seu login" />
 
 			<LoginStyle>
 				<LoginForm>
