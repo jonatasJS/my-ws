@@ -1,9 +1,11 @@
+import { Container } from '~/styles/StyleLayout'
+
 export default function PassReset() {
-  return (
-    <>
-      <div>
-        <h1>password_reset</h1>
-      </div>
-    </>
-  );
+	return (
+		<>
+			<Container>
+				<h1>password_reset</h1>
+			</Container>
+		</>
+	)
 }

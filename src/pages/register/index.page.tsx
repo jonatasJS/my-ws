@@ -1,9 +1,11 @@
+import { Container } from "~/styles/StyleLayout"
+
 export default function Register() {
   return (
 		<>
-			<div>
+			<Container>
 				<h1>register</h1>
-			</div>
+			</Container>
 		</>
 	)
 }
