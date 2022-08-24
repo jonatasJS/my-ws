@@ -11,7 +11,8 @@
 		"lint": "eslint src --ext .ts,.tsx",
 		"lint:css": "stylelint 'src/**/*.{ts,tsx}'",
 		"format": "prettier --write 'src/**/*.{ts,tsx}'",
-		"updateDeps": "yarn-upgrade-all"
+		"updateDeps": "yarn-upgrade-all",
+		"nlint": "next lint"
 	},
 	"dependencies": {
 		"next": "^12.2.5",

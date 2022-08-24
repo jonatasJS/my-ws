@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 
 import { SEO } from '~/components/SEO'
+import { Container } from '~/styles/StyleLayout'
 
 import {
 	ItemButton,
@@ -15,12 +16,12 @@ import {
 } from './ProductsPageStyle'
 
 interface DataTypes {
-	id: number;
-	title: string;
-	price: number;
-	category: string;
-	description: string;
-	image: string;
+	id: number
+	title: string
+	price: number
+	category: string
+	description: string
+	image: string
 }
 
 export default function Products() {
@@ -37,21 +38,25 @@ export default function Products() {
 
 	return (
 		<>
-			<SEO
-				title="Products"
-				description="Products"
-			/>
+			<SEO title={data.title} description={data.description} />
 
-			<ProductsPageStyle>
-				<ItemImage src={data.image} alt={data.title} width={300} height={300} />
-				<ProductContainer>
-					<ItemTitle>{data.title}</ItemTitle>
-					<ItemDescription>{data.description}</ItemDescription>
+			<Container>
+				<ProductsPageStyle>
+					<ItemImage
+						src={data.image}
+						alt={data.title}
+						width={300}
+						height={300}
+					/>
+					<ProductContainer>
+						<ItemTitle>{data.title}</ItemTitle>
+						<ItemDescription>{data.description}</ItemDescription>
 
-					<ItemPrice>{data.price}</ItemPrice>
-					<ItemButton>Comprar</ItemButton>
-				</ProductContainer>
-			</ProductsPageStyle>
+						<ItemPrice>{data.price}</ItemPrice>
+						<ItemButton>Comprar</ItemButton>
+					</ProductContainer>
+				</ProductsPageStyle>
+			</Container>
 		</>
 	)
 }
