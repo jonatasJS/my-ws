@@ -23,7 +23,7 @@ export default function Login() {
 	return (
 		<LoginStyle>
 			<LoginForm>
-				<form onSubmit={e => e.preventDefault()}>
+				<form onSubmit={(e) => e.preventDefault()}>
 					<LoginTitle>
 						{random < 5 ? (
 							<LockIcon width={75} height={75} />
@@ -62,15 +62,20 @@ export default function Login() {
 						required
 						pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
 					/>
-					<LoginInput minLength={8} type="password" placeholder="Password" required />
+					<LoginInput
+						minLength={8}
+						type="password"
+						placeholder="Password"
+						required
+					/>
 					<LoginButton>login</LoginButton>
 				</form>
 				<OtherLogin>
 					<Link href="/register">
-						<a>Registrar</a>
+						<a href="/register">Registrar</a>
 					</Link>
-					<Link href="password_reset">
-						<a>Esqueci minha senha</a>
+					<Link href="/password_reset">
+						<a href="/password_reset">Esqueci minha senha</a>
 					</Link>
 				</OtherLogin>
 			</LoginForm>

@@ -26,7 +26,7 @@ export function Header() {
 		<HeaderStyle>
 			<NavbarStyle>
 				<Link href="/">
-					<BrandStyle>
+					<BrandStyle href="/">
 						<Logo />
 					</BrandStyle>
 				</Link>
@@ -42,7 +42,10 @@ export function Header() {
 					<MenuInner>
 						<MenuItem onClick={() => setIsOpen(false)}>
 							<Link href="/">
-								<MenuLinkStyle className={pathname === '/' ? 'active' : ''}>
+								<MenuLinkStyle
+									href="/"
+									className={pathname === '/' ? 'active' : ''}
+								>
 									Inicio
 								</MenuLinkStyle>
 							</Link>
@@ -51,6 +54,7 @@ export function Header() {
 						<MenuItem onClick={() => setIsOpen(false)}>
 							<Link href="/products">
 								<MenuLinkStyle
+									href="/products"
 									className={
 										pathname.replaceAll(/[0-9]/g, '').replaceAll('/', '') ===
 										'products'
@@ -71,6 +75,7 @@ export function Header() {
 						<MenuItem onClick={() => setIsOpen(false)}>
 							<Link href="/reviews">
 								<MenuLinkStyle
+									href="/reviews"
 									className={pathname === '/reviews' ? 'active' : ''}
 								>
 									Reviews
@@ -81,6 +86,7 @@ export function Header() {
 						<MenuItem onClick={() => setIsOpen(false)}>
 							<Link href="/support">
 								<MenuLinkStyle
+									href="/support"
 									className={pathname === '/support' ? 'active' : ''}
 								>
 									Ajuda
