@@ -1,5 +1,6 @@
 // Pagina com informações e detalhes do produto pelo id
 import { useRouter } from 'next/router'
+import { GetStaticProps } from 'next/types'
 import { useEffect, useState } from 'react'
 
 import { SEO } from '~/components/SEO'
@@ -24,39 +25,46 @@ interface DataTypes {
 	image: string
 }
 
-export default function Products() {
-	const [data, setData] = useState<DataTypes>({} as DataTypes)
-	const router = useRouter()
-	const id = router.query.id as string
-
-	useEffect(() => {
-		fetch(`https://fakestoreapi.com/products/${id}`)
-			.then((res) => res.json())
-			.then((respo) => setData(respo))
-			.catch((err) => console.log(err))
-	}, [])
+export default function Products({ post }: {
+	post: DataTypes;
+}) {
 
 	return (
 		<>
-			<SEO title={data.title} description={data.description} />
+			<SEO title={post.title} description={post.description} />
 
 			<Container>
 				<ProductsPageStyle>
 					<ItemImage
-						src={data.image}
-						alt={data.title}
+						src={post.image}
+						alt={post.title}
 						width={300}
 						height={300}
 					/>
 					<ProductContainer>
-						<ItemTitle>{data.title}</ItemTitle>
-						<ItemDescription>{data.description}</ItemDescription>
+						<ItemTitle>{post.title}</ItemTitle>
+						<ItemDescription>{post.description}</ItemDescription>
 
-						<ItemPrice>{data.price}</ItemPrice>
+						<ItemPrice>{post.price}</ItemPrice>
 						<ItemButton>Comprar</ItemButton>
 					</ProductContainer>
 				</ProductsPageStyle>
 			</Container>
 		</>
 	)
+}
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+	/*
+    Here is the error:
+    Properties 'slug' and 'lang' don't exist on type 'ParsedUrlQuery | undefined'
+  */
+	const id = params?.id
+	const post = fetch(`https://fakestoreapi.com/products/${id}`)
+		.then((res) => res.json())
+		.catch((err) => console.log(err))
+
+	return {
+		props: { post },
+	}
 }
