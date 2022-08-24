@@ -51,12 +51,22 @@ export function Header() {
 						<MenuItem onClick={() => setIsOpen(false)}>
 							<Link href="/products">
 								<MenuLinkStyle
-									className={pathname.replaceAll(/[0-9]/g, '').replaceAll('/', '') === 'products' ? 'active' : ''}
+									className={
+										pathname.replaceAll(/[0-9]/g, '').replaceAll('/', '') ===
+										'products'
+											? 'active'
+											: ''
+									}
 								>
 									Produtos
 								</MenuLinkStyle>
 							</Link>
-							{pathname.replaceAll(/[0-9]/g, '').replaceAll('/', '') === 'products' ? <span /> : ''}
+							{pathname.replaceAll(/[0-9]/g, '').replaceAll('/', '') ===
+							'products' ? (
+								<span />
+							) : (
+								''
+							)}
 						</MenuItem>
 						<MenuItem onClick={() => setIsOpen(false)}>
 							<Link href="/reviews">
@@ -83,11 +93,11 @@ export function Header() {
 					<hr />
 
 					<Link href="/login">
-						<MenuBlockStyle2>Login</MenuBlockStyle2>
+						<MenuBlockStyle2 href="/login">Login</MenuBlockStyle2>
 					</Link>
 				</MenuStyle>
 				<Link href="/login">
-					<MenuBlockStyle>Login</MenuBlockStyle>
+					<MenuBlockStyle href="/login">Login</MenuBlockStyle>
 				</Link>
 			</NavbarStyle>
 		</HeaderStyle>
