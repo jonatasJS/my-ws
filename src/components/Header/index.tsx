@@ -26,7 +26,7 @@ export function Header() {
 		<HeaderStyle>
 			<NavbarStyle>
 				<Link href="/">
-					<BrandStyle href="/">
+					<BrandStyle>
 						<Logo />
 					</BrandStyle>
 				</Link>
@@ -42,10 +42,7 @@ export function Header() {
 					<MenuInner>
 						<MenuItem onClick={() => setIsOpen(false)}>
 							<Link href="/">
-								<MenuLinkStyle
-									href="/"
-									className={pathname === '/' ? 'active' : ''}
-								>
+								<MenuLinkStyle className={pathname === '/' ? 'active' : ''}>
 									Inicio
 								</MenuLinkStyle>
 							</Link>
@@ -54,28 +51,16 @@ export function Header() {
 						<MenuItem onClick={() => setIsOpen(false)}>
 							<Link href="/products">
 								<MenuLinkStyle
-									href="/products"
-									className={
-										pathname.replaceAll(/[0-9]/g, '').replaceAll('/', '') ===
-										'products'
-											? 'active'
-											: ''
-									}
+									className={pathname.replaceAll(/[0-9]/g, '').replaceAll('/', '') === 'products' ? 'active' : ''}
 								>
 									Produtos
 								</MenuLinkStyle>
 							</Link>
-							{pathname.replaceAll(/[0-9]/g, '').replaceAll('/', '') ===
-							'products' ? (
-								<span />
-							) : (
-								''
-							)}
+							{pathname.replaceAll(/[0-9]/g, '').replaceAll('/', '') === 'products' ? <span /> : ''}
 						</MenuItem>
 						<MenuItem onClick={() => setIsOpen(false)}>
 							<Link href="/reviews">
 								<MenuLinkStyle
-									href="/reviews"
 									className={pathname === '/reviews' ? 'active' : ''}
 								>
 									Reviews
@@ -86,7 +71,6 @@ export function Header() {
 						<MenuItem onClick={() => setIsOpen(false)}>
 							<Link href="/support">
 								<MenuLinkStyle
-									href="/support"
 									className={pathname === '/support' ? 'active' : ''}
 								>
 									Ajuda
@@ -99,11 +83,11 @@ export function Header() {
 					<hr />
 
 					<Link href="/login">
-						<MenuBlockStyle2 href="/login">Login</MenuBlockStyle2>
+						<MenuBlockStyle2>Login</MenuBlockStyle2>
 					</Link>
 				</MenuStyle>
 				<Link href="/login">
-					<MenuBlockStyle href="/login">Login</MenuBlockStyle>
+					<MenuBlockStyle>Login</MenuBlockStyle>
 				</Link>
 			</NavbarStyle>
 		</HeaderStyle>

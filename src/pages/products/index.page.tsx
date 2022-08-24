@@ -61,10 +61,10 @@ export default function Products() {
 									<ItemImage src={item.image} alt={item.title} />
 									<ItemTitle>{item.title}</ItemTitle>
 									<ItemPrice>R$ {item.price}</ItemPrice>
-									<Link href={`/products/${item.id}`}>
-										<ItemButton href={`/products/${item.id}`}>
-											DETALHES
-										</ItemButton>
+									<Link
+										href={`/products/${item.id}`}
+									>
+										<ItemButton>DETALHES</ItemButton>
 									</Link>
 								</ProductContainer>
 							)
