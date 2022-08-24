@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import { MenuBlockStyle2 } from '~/components/Header/style'
+import { MenuBlockStyle } from '~/components/Header/style'
 
 import { SEO } from '~/components/SEO'
 
@@ -17,7 +17,7 @@ export default function pageError({ statusCode }: { statusCode: number }) {
 						: 'An error occurred on client'}
 				</p>
 				<Link href="/">
-					<MenuBlockStyle2 href="/">HOME</MenuBlockStyle2>
+					<MenuBlockStyle href="/">HOME</MenuBlockStyle>
 				</Link>
 			</Container>
 		</>
