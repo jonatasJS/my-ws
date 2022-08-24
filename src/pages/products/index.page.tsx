@@ -1,8 +1,10 @@
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { BiSearchAlt2 as SearchIcon } from 'react-icons/bi'
 
-import { SEO } from '~/components/SEO'
+import { SEO } from '~/components/SEO';
+
+import { DataTypes } from '~/utils/Types'
 
 import {
 	ItemPrice,
@@ -17,25 +19,8 @@ import {
 	ItemButton,
 } from './ProductsPageStyle'
 
-interface DataTypes {
-	id: number
-	title: string
-	price: number
-	category: string
-	description: string
-	image: string
-}
-
-export default function Products() {
-	const [data, setData] = useState<Array<DataTypes>>([])
+export default function Products({ data }: { data: Array<DataTypes> }) {
 	const [search, setSearch] = useState('')
-
-	useEffect(() => {
-		fetch('https://fakestoreapi.com/products')
-			.then((res) => res.json())
-			.then((respo) => setData(respo))
-			.catch((err) => console.log(err))
-	}, [])
 
 	return (
 		<>
@@ -76,14 +61,35 @@ export default function Products() {
 		</>
 	)
 }
-/*
 
-.map(product => (
-							<div key={product.id}>
-								<h1>{product.name}</h1>
-								<p>{product.description}</p>
-								<p>{product.price}</p>
-							</div>
-						)
 
-*/
+
+export async function getStaticProps() {
+	const res = await fetch(`https://fakestoreapi.com/products`)
+	const data: DataTypes = await res.json()
+
+	return {
+		props: {
+			data,
+		},
+	}
+}
+
+// export async function getStaticPaths() {
+// 	const res = await fetch(`https://fakestoreapi.com/products/`)
+// 	const data: Array<DataTypes> = await res.json()
+
+// 	const paths = data.map((product: DataTypes) => {
+// 		return {
+// 			params: {
+// 				id: product.id.toString(),
+// 			},
+// 		}
+// 	})
+
+// 	return {
+// 		paths,
+// 		fallback: false,
+// 	}
+// }
+

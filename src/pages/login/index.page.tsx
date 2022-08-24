@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { MdLock as LockIcon } from 'react-icons/md'
 
+import { DataTypes } from '~/utils/Types'
+
 import {
 	LoginStyle,
 	LoginButton,
@@ -74,4 +76,15 @@ export default function Login() {
 			</LoginForm>
 		</LoginStyle>
 	)
+}
+
+export async function getStaticProps() {
+	const res = await fetch(`https://fakestoreapi.com/products`)
+	const data: DataTypes = await res.json()
+
+	return {
+		props: {
+			data,
+		},
+	}
 }

@@ -1,5 +1,7 @@
 import { SEO } from '~/components/SEO'
 
+import { DataTypes } from '~/utils/Types'
+
 import {
 	ItemButton,
 	ItemDescription,
@@ -9,15 +11,6 @@ import {
 	ProductContainer,
 	ProductsPageStyle,
 } from './ProductsPageStyle'
-
-interface DataTypes {
-	id: number;
-	title: string;
-	price: number;
-	category: string;
-	description: string;
-	image: string;
-}
 
 export default function Products({ data }: { data: DataTypes}) {
 
