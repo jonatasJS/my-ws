@@ -10,7 +10,13 @@ export default function pageError({ statusCode }: { statusCode: number }) {
 	return (
 		<>
 			<SEO title="Page not found" description="Page not found" />
-			<Container>
+			<Container
+				style={{
+					display: 'flex !important',
+					flexDirection: 'column !important',
+					gap: '50px !important',
+				}}
+			>
 				<p>
 					{statusCode
 						? `An error ${statusCode} occurred on server`
