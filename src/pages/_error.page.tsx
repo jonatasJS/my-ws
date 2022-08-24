@@ -13,7 +13,7 @@ export default function pageError({ statusCode }: { statusCode: number }) {
 			<Container
 				style={{
 					display: 'flex !important',
-					flexDirection: 'column !important',
+					flexDirection: 'column',
 					gap: '50px !important',
 				}}
 			>
