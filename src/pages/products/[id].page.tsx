@@ -1,7 +1,3 @@
-// Pagina com informações e detalhes do produto pelo id
-import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
-
 import { SEO } from '~/components/SEO'
 
 import {
@@ -23,17 +19,7 @@ interface DataTypes {
 	image: string;
 }
 
-export default function Products() {
-	const [data, setData] = useState<DataTypes>({} as DataTypes)
-	const router = useRouter()
-	const id = router.query.id as string
-
-	useEffect(() => {
-		fetch(`https://fakestoreapi.com/products/${id}`)
-			.then((res) => res.json())
-			.then((respo) => setData(respo))
-			.catch((err) => console.log(err))
-	}, [])
+export default function Products({ data }: { data: DataTypes}) {
 
 	return (
 		<>
@@ -54,4 +40,34 @@ export default function Products() {
 			</ProductsPageStyle>
 		</>
 	)
+}
+
+export async function getStaticProps(context: { params: { id: string; }; }) {
+	const id = context.params.id
+	const res = await fetch(`https://fakestoreapi.com/products/${id}`)
+	const data: DataTypes = await res.json()
+
+	return {
+		props: {
+			data,
+		},
+	}
+}
+
+export async function getStaticPaths() {
+	const res = await fetch(`https://fakestoreapi.com/products/`)
+	const data: Array<DataTypes> = await res.json()
+
+	const paths = data.map((product: DataTypes) => {
+		return {
+			params: {
+				id: product.id.toString()
+			}
+		}
+	})
+
+	return {
+		paths,
+		fallback: false,
+	}
 }
