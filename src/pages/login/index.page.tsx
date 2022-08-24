@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { MdLock as LockIcon } from 'react-icons/md'
+import { SEO } from '~/components/SEO'
 
 import { DataTypes } from '~/utils/Types'
 
@@ -22,6 +23,11 @@ export default function Login() {
 
 	return (
 		<LoginStyle>
+			<SEO
+				title="Next Rocket - Login"
+				description='Faça seu login no nosso site'
+			/>
+			
 			<LoginForm>
 				<form onSubmit={(e) => e.preventDefault()}>
 					<LoginTitle>

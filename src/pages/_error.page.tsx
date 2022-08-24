@@ -9,7 +9,8 @@ import { Container } from '~/styles/StyleLayout'
 export default function pageError({ statusCode }: { statusCode: number }) {
 	return (
 		<>
-			<SEO title="Page not found" description="Page not found" />
+			<SEO
+				title="Next Rocket - Page not found" description="Page not found" />
 			<Container
 				style={{
 					display: 'flex !important',

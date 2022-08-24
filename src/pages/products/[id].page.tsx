@@ -17,7 +17,7 @@ export default function Products({ data }: { data: DataTypes}) {
 	return (
 		<>
 			<SEO
-				title={data.title}
+				title={'Next Rocket - '+data.title}
 				description={data.description}
 			/>
 
