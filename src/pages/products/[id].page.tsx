@@ -17,17 +17,17 @@ export default function Products({ data }: { data: DataTypes}) {
 	return (
 		<>
 			<SEO
-				title={'Next Rocket - '+data.title}
-				description={data.description}
+				title={'Next Rocket - '+data?.title}
+				description={data?.description}
 			/>
 
 			<ProductsPageStyle>
-				<ItemImage src={data.image} alt={data.title} width={300} height={300} />
+				<ItemImage src={data?.image} alt={data?.title} width={300} height={300} />
 				<ProductContainer>
-					<ItemTitle>{data.title}</ItemTitle>
-					<ItemDescription>{data.description}</ItemDescription>
+					<ItemTitle>{data?.title}</ItemTitle>
+					<ItemDescription>{data?.description}</ItemDescription>
 
-					<ItemPrice>{data.price}</ItemPrice>
+					<ItemPrice>{data?.price}</ItemPrice>
 					<ItemButton>Comprar</ItemButton>
 				</ProductContainer>
 			</ProductsPageStyle>
@@ -36,7 +36,7 @@ export default function Products({ data }: { data: DataTypes}) {
 }
 
 export async function getStaticProps(context: { params: { id: string; }; }) {
-	const id = context.params.id
+	const id = context?.params?.id
 	const res = await fetch(`https://fakestoreapi.com/products/${id}`)
 	const data: DataTypes = await res.json()
 
@@ -54,7 +54,7 @@ export async function getStaticPaths() {
 	const paths = data.map((product: DataTypes) => {
 		return {
 			params: {
-				id: product.id.toString()
+				id: product?.id?.toString()
 			}
 		}
 	})
