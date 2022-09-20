@@ -1,0 +1,196 @@
+// ==UserScript==
+// @name         New Userscript
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  try to take over the world!
+// @author       You
+// @match        https://sim.tins.com.br/*
+// @icon         https://www.google.com/s2/favicons?domain=sim.tins.com.br
+// @grant        none
+// ==/UserScript==
+
+'use strict';
+// const number = "Como obter apenas os345345345 números de uma string em Javascript?".replace(/[^0-9]/g, '')
+// id_problema_alegado_adicional
+let timeOut = 0;
+let timeOutNome = 0;
+const shortcuts = {
+	NumpadDecimal: (data) => {
+		const text = document.getElementById("id_solucao_aplicada_adicional");
+
+		text.value = `ATENDIMENTO CONCLUÍDO`;
+		document.querySelector('[class="btn btn-primary"][type="submit"]').click();
+		// return navigator.clipboard.writeText(testoCopiado);
+	}, ArrowDown: (data) => {
+		const text = document.getElementById("id_problema_alegado_adicional");
+		const dia = data.getDate();
+		const mes = data.getMonth();
+		const testoCopiado = `CLIENTE ENTROU EM CONTATO
+________________________________________________
+
+SOLICITANTE:
+NUMERO:
+
+CRC — ATENDIMENTO — KARLA — ${dia < 10 ? '0' + dia : dia}/${(mes + 1) < 10 ? '0' + (mes + 1) : mes + 1}`;
+
+		text.value = `${testoCopiado}`;
+		// return navigator.clipboard.writeText(testoCopiado);
+	},/*s
+	ArrowUp: (data) => {
+        const text = document.getElementById("id_problema_alegado_adicional");
+		const dia = data.getDate();
+		const mes = data.getMonth();
+		const hora = data.getHours();
+		const min = data.getMinutes();
+		const sec = data.getSeconds();
+		const testoCopiado = `POR GENTILEZA, REALIZAR A RETIRADA DE EQUIPAMENTO, POIS O CONTRATO FOI CANCELADO.
+________________________________________________
+
+CLIENTE:
+FONE:
+
+CRC — ATENDIMENTO — JÔNATAS — ${dia < 10 ? '0' + dia : dia}/${(mes + 1) < 10 ? '0' + (mes + 1) : mes + 1} — ${hora < 10 ? '0' + hora : hora}:${min < 10 ? '0' + min : min}:${sec < 10 ? '0' + sec : sec}`;
+
+        text.value = `${testoCopiado}`;
+		// return navigator.clipboard.writeText(testoCopiado);
+	},*/
+	ArrowUp: (data) => {
+		const text = document.getElementById("id_problema_alegado_adicional");
+		const dia = data.getDate();
+		const mes = data.getMonth();
+		const testoCopiado = `CLIENTE ENTROU EM CONTATO, O(A) SENHOR (A) DESEJA VERIFICAR O PRE INFORME DA SUA CONEXÃO, RELATA QUE DESEJA A LIBERAÇÃO DA REDE.
+________________________________________________
+
+CLIENTE:
+FONE:
+PROTOCOLO:
+
+CRC — ATENDIMENTO — KARLA — ${dia < 10 ? '0' + dia : dia}/${(mes + 1) < 10 ? '0' + (mes + 1) : mes + 1}`;
+
+		text.value = `${testoCopiado}`;
+		// return navigator.clipboard.writeText(testoCopiado);
+	},/*
+	ArrowRight: (data) => {
+        const text = document.getElementById("id_problema_alegado_adicional");
+		const dia = data.getDate();
+		const mes = data.getMonth();
+		const hora = data.getHours();
+		const min = data.getMinutes();
+		const sec = data.getSeconds();
+		const testoCopiado = `SOLICITO, POR GENTILEZA, QUE SEJA RETIRADA A CONFIGURAÇÃO DO CLIENTE DA OLT. CONTRATO CANCELADO.
+________________________________________________
+
+CLIENTE:
+
+CRC — ATENDIMENTO — JÔNATAS — ${dia < 10 ? '0' + dia : dia}/${(mes + 1) < 10 ? '0' + (mes + 1) : mes + 1} — ${hora < 10 ? '0' + hora : hora}:${min < 10 ? '0' + min : min}:${sec < 10 ? '0' + sec : sec}`;
+
+        text.value = `${testoCopiado}`;
+		// return navigator.clipboard.writeText(testoCopiado);
+	},*/
+	/*ArrowRight: (data) => {
+		const text = document.getElementById("id_solucao_aplicada_adicional");
+		if (text) {
+						const value = text.innerText;
+			text.style.height = '250px';
+			text.style.maxWidth = '560px';
+						text.innetText = value.toUpperCase();
+		} else {
+			return data;
+		}
+	}*/
+}
+
+
+
+const campCPF = document.getElementById("filtro_cpf_cnpj_cliente");
+const style = document.createElement("style")
+style.innerText = ".block .header{border-radius-top-left: 15px !important;border-radius-top-right: 15px !important;}.block .actions{border-radius-bottom-left: 15px !important;border-radius-bottom-right: 15px !important;}.block,.block .block-flat,.block-flat,.tab-content {border-radius: 15px !important;}input.star-5:checked ~ label.star::before{text-shadow: 0 0 20px yellow !important;}input.star:checked ~ label.star::before {color: yellow !important;}label.star:hover{text-shadow: 0 0 20px yellow !important;}label.star {color: yellow !important;}*{font-family:'Ubuntu';font-weight: bold !important;}.btn-warning{background-color: #f16e3f;border-color: #f16e3f;color: #fff;}.btn-warning:hover{box-shadow: 0 0 10px 3px #f16e3f;}.btn#btn-copy,.btn-success:hover {background-color: #19b698;border-color: #19b698;color: #fff;box-shadow: 0 0 10px 3px #19b698; }button,a{transition: all .2s linear;}.label-warning,.badge-warning {  background-color: #f16e3f !important; color: #fff !important; }";
+const timeCaixa = setInterval(() => {
+	if (timeOut >= 20) return;
+
+	const text = document.getElementById("id_problema_alegado_adicional");
+	if (text) {
+		const value = text.innerText;
+		clearInterval(timeCaixa);
+		text.style.height = '250px';
+		text.style.maxWidth = '560px';
+		text.innerText = value.toUpperCase();
+	} else {
+		timeOut = timeOut + 0.5;
+		return;
+	}
+}, 500);
+
+function App(key) {
+	const acceptedCommands = shortcuts;
+	const execultedCommand = acceptedCommands[key];
+
+	if (execultedCommand) {
+		execultedCommand(new Date());
+	}
+
+}
+
+
+const timeNome = setInterval(() => {
+	if (timeOutNome >= 120) return;
+
+	let doc = document.getElementsByTagName('tbody')[0];
+	let click = false;
+
+	function start() {
+		if (document.getElementById("btn-copy-existing")) return;
+		if (doc == undefined) return;
+
+		const btn = document.createElement("bytton");
+		const text = doc.children[0].children[0].children[0].children[0].children[1];
+		const num = text.innerText.replace(/[^0-9]/g, '');
+		const formated = text.innerText.replace(' :: ', '').replaceAll('.', '').replace('-', '').replace(num, '');
+		btn.innerText = 'Copiar nome';
+		btn.className = 'btn btn-success btn-trans btn-hover';
+		btn.id = 'btn-copy-existing';
+		btn.style.transition = 'all .2s linear';
+		btn.onclick = () => {
+			navigator.clipboard.writeText(formated);
+			btn.innerText = 'Copiado!';
+			btn.id = 'btn-copy';
+			setTimeout(function () {
+				btn.innerText = 'Copiar nome';
+				btn.toggleAttribute('id', '')
+			}, 2000);
+		}
+		doc.children[0].children[0].children[0].children[0].appendChild(btn);
+	}
+
+	if (doc) {
+		clearInterval(timeNome);
+		start();
+		document.getElementsByClassName('block-flat')[0].addEventListener('click', () => {
+			if (click == true) return;
+			doc = document.getElementsByTagName('tbody')[0];
+			start();
+			click = !click;
+		});
+		document.getElementsByClassName('btn-success')[0].addEventListener('click', () => {
+			if (click == false) return;
+			click = !click;
+		});
+	} else {
+		timeOutNome = timeOutNome + 0.5;
+		return;
+	}
+}, 500);
+
+window.document.addEventListener('keyup', function (e) {
+	if (e.ctrlKey) return App(e.code);
+});
+
+if (campCPF) campCPF.focus();
+
+document.getElementsByTagName('head')[0].appendChild(style);
+
+/*
+
+
+
+*/
