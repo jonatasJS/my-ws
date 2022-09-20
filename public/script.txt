@@ -10,101 +10,40 @@
 // ==/UserScript==
 
 'use strict';
-// const number = "Como obter apenas os345345345 números de uma string em Javascript?".replace(/[^0-9]/g, '')
-// id_problema_alegado_adicional
 let timeOut = 0;
 let timeOutNome = 0;
 const shortcuts = {
 	NumpadDecimal: (data) => {
-		const text = document.getElementById("id_solucao_aplicada_adicional");
+		const text = document.getElementById("id_descricao");
 
-		text.value = `ATENDIMENTO CONCLUÍDO`;
 		document.querySelector('[class="btn btn-primary"][type="submit"]').click();
-		// return navigator.clipboard.writeText(testoCopiado);
 	}, ArrowDown: (data) => {
-		const text = document.getElementById("id_problema_alegado_adicional");
+		const text = document.getElementById("id_descricao");
 		const dia = data.getDate();
 		const mes = data.getMonth();
-		const testoCopiado = `CLIENTE ENTROU EM CONTATO
-________________________________________________
+		const testoCopiado = `Agendado com o titular pelo (  ) fone (  ) para (  ) no período da (  ) endereço confirmado.
 
-SOLICITANTE:
-NUMERO:
-
-CRC — ATENDIMENTO — KARLA — ${dia < 10 ? '0' + dia : dia}/${(mes + 1) < 10 ? '0' + (mes + 1) : mes + 1}`;
+CRC — AGENDAMENTO — WENDER — ${dia < 10 ? '0' + dia : dia}/${(mes + 1) < 10 ? '0' + (mes + 1) : mes + 1}`;
 
 		text.value = `${testoCopiado}`;
-		// return navigator.clipboard.writeText(testoCopiado);
-	},/*s
+	},
 	ArrowUp: (data) => {
-        const text = document.getElementById("id_problema_alegado_adicional");
+		const text = document.getElementById("id_descricao");
 		const dia = data.getDate();
 		const mes = data.getMonth();
-		const hora = data.getHours();
-		const min = data.getMinutes();
-		const sec = data.getSeconds();
-		const testoCopiado = `POR GENTILEZA, REALIZAR A RETIRADA DE EQUIPAMENTO, POIS O CONTRATO FOI CANCELADO.
-________________________________________________
+		const testoCopiado = `Três tentativas de contato pelo fone (  ) chamadas não atendidas.
 
-CLIENTE:
-FONE:
-
-CRC — ATENDIMENTO — JÔNATAS — ${dia < 10 ? '0' + dia : dia}/${(mes + 1) < 10 ? '0' + (mes + 1) : mes + 1} — ${hora < 10 ? '0' + hora : hora}:${min < 10 ? '0' + min : min}:${sec < 10 ? '0' + sec : sec}`;
-
-        text.value = `${testoCopiado}`;
-		// return navigator.clipboard.writeText(testoCopiado);
-	},*/
-	ArrowUp: (data) => {
-		const text = document.getElementById("id_problema_alegado_adicional");
-		const dia = data.getDate();
-		const mes = data.getMonth();
-		const testoCopiado = `CLIENTE ENTROU EM CONTATO, O(A) SENHOR (A) DESEJA VERIFICAR O PRE INFORME DA SUA CONEXÃO, RELATA QUE DESEJA A LIBERAÇÃO DA REDE.
-________________________________________________
-
-CLIENTE:
-FONE:
-PROTOCOLO:
-
-CRC — ATENDIMENTO — KARLA — ${dia < 10 ? '0' + dia : dia}/${(mes + 1) < 10 ? '0' + (mes + 1) : mes + 1}`;
+CRC — AGENDAMENTO — WENDER — ${dia < 10 ? '0' + dia : dia}/${(mes + 1) < 10 ? '0' + (mes + 1) : mes + 1}`;
 
 		text.value = `${testoCopiado}`;
-		// return navigator.clipboard.writeText(testoCopiado);
-	},/*
-	ArrowRight: (data) => {
-        const text = document.getElementById("id_problema_alegado_adicional");
-		const dia = data.getDate();
-		const mes = data.getMonth();
-		const hora = data.getHours();
-		const min = data.getMinutes();
-		const sec = data.getSeconds();
-		const testoCopiado = `SOLICITO, POR GENTILEZA, QUE SEJA RETIRADA A CONFIGURAÇÃO DO CLIENTE DA OLT. CONTRATO CANCELADO.
-________________________________________________
-
-CLIENTE:
-
-CRC — ATENDIMENTO — JÔNATAS — ${dia < 10 ? '0' + dia : dia}/${(mes + 1) < 10 ? '0' + (mes + 1) : mes + 1} — ${hora < 10 ? '0' + hora : hora}:${min < 10 ? '0' + min : min}:${sec < 10 ? '0' + sec : sec}`;
-
-        text.value = `${testoCopiado}`;
-		// return navigator.clipboard.writeText(testoCopiado);
-	},*/
-	/*ArrowRight: (data) => {
-		const text = document.getElementById("id_solucao_aplicada_adicional");
-		if (text) {
-						const value = text.innerText;
-			text.style.height = '250px';
-			text.style.maxWidth = '560px';
-						text.innetText = value.toUpperCase();
-		} else {
-			return data;
-		}
-	}*/
+	},
 }
 
 
 
 const campCPF = document.getElementById("filtro_cpf_cnpj_cliente");
 const style = document.createElement("style")
-style.innerText = ".block .header{border-radius-top-left: 15px !important;border-radius-top-right: 15px !important;}.block .actions{border-radius-bottom-left: 15px !important;border-radius-bottom-right: 15px !important;}.block,.block .block-flat,.block-flat,.tab-content {border-radius: 15px !important;}input.star-5:checked ~ label.star::before{text-shadow: 0 0 20px yellow !important;}input.star:checked ~ label.star::before {color: yellow !important;}label.star:hover{text-shadow: 0 0 20px yellow !important;}label.star {color: yellow !important;}*{font-family:'Ubuntu';font-weight: bold !important;}.btn-warning{background-color: #f16e3f;border-color: #f16e3f;color: #fff;}.btn-warning:hover{box-shadow: 0 0 10px 3px #f16e3f;}.btn#btn-copy,.btn-success:hover {background-color: #19b698;border-color: #19b698;color: #fff;box-shadow: 0 0 10px 3px #19b698; }button,a{transition: all .2s linear;}.label-warning,.badge-warning {  background-color: #f16e3f !important; color: #fff !important; }";
+style.innerText = ".block .header{border-radius-top-left: 15px !important;border-radius-top-right: 15px !important;}.block .actions{border-radius-bottom-left: 15px !important;border-radius-bottom-right: 15px !important;}.block,.block .block-flat,.block-flat,.tab-content {border-radius: 15px !important;}input.star-5:checked ~ label.star::before{text-shadow: 0 0 20px yellow !important;}input.star:checked ~ label.star::before {color: yellow !important;}label.star:hover{text-shadow: 0 0 20px yellow !important;}label.star {color: yellow !important;}.btn-warning{background-color: #f16e3f;border-color: #f16e3f;color: #fff;}.btn-warning:hover{box-shadow: 0 0 10px 3px #f16e3f;}.btn#btn-copy,.btn-success:hover {background-color: #19b698;border-color: #19b698;color: #fff;box-shadow: 0 0 10px 3px #19b698; }button,a{transition: all .2s linear;}.label-warning,.badge-warning {  background-color: #f16e3f !important; color: #fff !important; }";
 const timeCaixa = setInterval(() => {
 	if (timeOut >= 20) return;
 
